@@ -17,9 +17,9 @@
 
 namespace LinkedIn;
 
+use function GuzzleHttp\Psr7\build_query;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\RequestException;
-use function GuzzleHttp\Psr7\build_query;
 use GuzzleHttp\Psr7\Uri;
 use LinkedIn\Http\Method;
 
@@ -278,8 +278,8 @@ class Client
                 'headers' => [
                     'Content-Type' => 'application/json',
                     'x-li-format' => 'json',
-                    'Connection' => 'Keep-Alive'
-                ]
+                    'Connection' => 'Keep-Alive',
+                ],
             ]);
             try {
                 $response = $guzzle->post($uri, ['form_params' => [
@@ -308,8 +308,11 @@ class Client
      */
     public static function responseToArray($response)
     {
-    	$contents = $response->getBody()->getContents();
-    	if (!strlen($contents)) return [];
+        $contents = $response->getBody()->getContents();
+        if (!strlen($contents)) {
+            return [];
+        }
+
         return \GuzzleHttp\json_decode(
             $contents,
             true
@@ -496,7 +499,9 @@ class Client
             'headers' => $headers,
         ]);
         if (!empty($params) && Method::GET === $method) {
-            $endpoint .= '?' . build_query($params);
+            $endpoint .= '?projection=(id,profilePicture(displayImage~digitalmediaAsset:playableStreams)';
+            // $endpoint .= '?' . build_query($params);
+            info(['params' => $params, 'endpoint' => $endpoint]);
         }
         try {
             $response = $guzzle->request($method, $endpoint, $options);
@@ -561,7 +566,7 @@ class Client
             $headers['Authorization'] = 'Bearer ' . $this->accessToken->getToken();
         }
         $guzzle = new GuzzleClient([
-            'base_uri' => $this->getApiRoot()
+            'base_uri' => $this->getApiRoot(),
         ]);
         $fileinfo = pathinfo($path);
         $filename = preg_replace('/\W+/', '_', $fileinfo['filename']);
@@ -573,8 +578,8 @@ class Client
                 [
                     'name' => 'source',
                     'filename' => $filename,
-                    'contents' => fopen($path, 'r')
-                ]
+                    'contents' => fopen($path, 'r'),
+                ],
             ],
             'headers' => $headers,
         ];
