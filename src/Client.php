@@ -499,7 +499,7 @@ class Client
             'headers' => $headers,
         ]);
         if (!empty($params) && Method::GET === $method) {
-            $endpoint .= '?projection=(id,profilePicture(displayImage~digitalmediaAsset:playableStreams)';
+            $endpoint .= '?projection=(id,profilePicture(displayImage~:playableStreams)';
             // $endpoint .= '?' . build_query($params);
             info(['params' => $params, 'endpoint' => $endpoint]);
         }
