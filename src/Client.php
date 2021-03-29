@@ -499,9 +499,11 @@ class Client
             'headers' => $headers,
         ]);
         if (!empty($params) && Method::GET === $method) {
-            $endpoint .= '?projection=(id,profilePicture(displayImage~:playableStreams)';
+            // $endpoint .= '?projection=(id,profilePicture(displayImage~:playableStreams)';
+            $endpoint .= '?projection=(profilePicture(displayImage~:playableStreams))';
+
             // $endpoint .= '?' . build_query($params);
-            info(['params' => $params, 'endpoint' => $endpoint]);
+            // info(['params' => $params, 'endpoint' => $endpoint]);
         }
         try {
             $response = $guzzle->request($method, $endpoint, $options);
