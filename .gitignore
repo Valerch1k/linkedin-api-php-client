@@ -22,3 +22,5 @@ fabric.properties
 composer.phar
 /vendor/
 .env
+/.idea
+.idea/deployment.xml
