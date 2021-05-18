@@ -11,6 +11,7 @@
     ],
     "homepage": "https://github.com/valerch1k/linkedin-api-php-client",
     "version": "1.0.2",
+    "minimum-stability": "dev"
     "require": {
         "php": ">=7.2",
         "ext-curl": "*",
