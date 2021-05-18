@@ -10,6 +10,7 @@
         "wrapper", "integration", "platform"
     ],
     "homepage": "https://github.com/valerch1k/linkedin-api-php-client",
+    "version": "1.1.1",
     "require": {
         "php": ">=7.2",
         "ext-curl": "*",
