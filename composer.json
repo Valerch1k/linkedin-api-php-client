@@ -9,6 +9,7 @@
         "social", "rest", "api", "client", "social network", "auth", "authorization",
         "wrapper", "integration", "platform"
     ],
+    "version": "1.0.4",
     "require": {
         "php": ">=7.2",
         "ext-curl": "*",
