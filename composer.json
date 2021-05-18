@@ -9,11 +9,10 @@
         "social", "rest", "api", "client", "social network", "auth", "authorization",
         "wrapper", "integration", "platform"
     ],
-    "homepage": "https://github.com/valerch1k/linkedin-api-php-client",
     "require": {
         "php": ">=7.2",
         "ext-curl": "*",
-        "guzzlehttp/guzzle": "^7.2"
+        "guzzlehttp/guzzle": "^7.0.1"
     },
     "license": "MIT",
     "authors": [
@@ -22,12 +21,6 @@
             "email": "valerchik396@gmail.com"
         }
     ],
-    "support": {
-        "docs": "https://www.zoonman.com/projects/linkedin-client/",
-        "source": "https://github.com/zoonman/linkedin-api-php-client",
-        "issues": "https://github.com/zoonman/linkedin-api-php-client/issues",
-        "wiki": "https://github.com/zoonman/linkedin-api-php-client/wiki"
-    },
     "autoload": {
         "psr-4": {"LinkedIn\\": "src/"}
     },
