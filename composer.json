@@ -1,5 +1,5 @@
 {
-    "name": "zoonman/linkedin-api-php-client",
+    "name": "valerch1k/linkedin-api-php-client",
     "description": "LinkedIn API PHP SDK with OAuth 2.0 & CSRF support. Can be used for social sign in or sharing on LinkedIn. Examples. Documentation.",
     "type": "library",
     "keywords": [
@@ -9,7 +9,7 @@
         "social", "rest", "api", "client", "social network", "auth", "authorization",
         "wrapper", "integration", "platform"
     ],
-    "homepage": "https://github.com/zoonman/linkedin-api-php-client",
+    "homepage": "https://github.com/valerch1k/linkedin-api-php-client",
     "require": {
         "php": ">=7.2",
         "ext-curl": "*",
@@ -18,21 +18,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Philipp Tkachev",
-            "email": "philipp@zoonman.com",
-            "homepage": "http://www.zoonman.com/",
-            "role": "Developer"
-        },
-        {
-            "name": "Aleksey Salnikov",
-            "email": "me@iamsalnikov.ru",
-            "homepage": "http://iamsalnikov.ru/",
-            "role": "Developer"
-        },
-        {
-            "name": "Daniel J. Post",
-            "homepage": "http://danieljpost.info/",
-            "role": "Developer"
+            "name": "Valeriy Sukhanov",
+            "email": "valerchik396@gmail.com"
         }
     ],
     "support": {
